@@ -61,11 +61,11 @@ CREATE TABLE Offices (
 );
 
     -- Inserting data for Offices
-    INSERT INTO Courses (Id, OfficeName, OfficeLocation) VALUES (1, 'Off_05', building A);
-    INSERT INTO Courses (Id, CourseName, OfficeLocation) VALUES (2, 'Off_12', building B);
-    INSERT INTO Courses (Id, CourseName, OfficeLocation) VALUES (3, 'Off_32', Adminstration);
-    INSERT INTO Courses (Id, CourseName, OfficeLocation) VALUES (4, 'Off_44', IT Department);
-    INSERT INTO Courses (Id, CourseName, OfficeLocation) VALUES (5, 'Off_43', IT Department);
+    INSERT INTO Offices (Id, OfficeName, OfficeLocation) VALUES (1, 'Off_05', 'Building A');
+    INSERT INTO Offices (Id, OfficeName, OfficeLocation) VALUES (2, 'Off_12', 'Building B');
+    INSERT INTO Offices (Id, OfficeName, OfficeLocation) VALUES (3, 'Off_32', 'Administration');
+    INSERT INTO Offices (Id, OfficeName, OfficeLocation) VALUES (4, 'Off_44', 'IT Department');
+    INSERT INTO Offices (Id, OfficeName, OfficeLocation) VALUES (5, 'Off_43', 'IT Department');
 
 ```
 
@@ -88,7 +88,7 @@ CREATE TABLE Offices (
 CREATE TABLE Instructors (
     Id INT PRIMARY KEY,
     Name VARCHAR(50) NOT NULL,
-    OfficeId INT NOT NULL REFERENCES Offices(Id),
+    OfficeId INT NOT NULL REFERENCES Offices(Id)
 );
 
     -- Inserting data for Instructors
@@ -221,7 +221,7 @@ CREATE TABLE SectionSchedules (
 -- Students Table
 CREATE TABLE Students (
     Id INT PRIMARY KEY,
-    Name VARCHAR(255) NOT NULL,
+    Name VARCHAR(255) NOT NULL
 );
 
     -- Inserting data for Students
